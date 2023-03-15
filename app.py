@@ -8,8 +8,7 @@ import streamlit as st
 import re
 import matplotlib.pyplot as plt
 import webbrowser
-
-plt.rcParams['font.family'] = 'MS Gothic'
+import japanize_matplotlib
 
 st.title('PBR分析アプリ')
 
@@ -59,6 +58,9 @@ def get_data(stock_list):
     return df
 
 result = get_data(stock_list)
+
+st.write("### 各企業PBR",result)
+st.write('---')
 
 fig = plt.figure()
 ax = fig.add_subplot(111)
